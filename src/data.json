@@ -2,41 +2,34 @@
   {
     "_id": "1asxasxadvwdevMCKcsdccdSMDCSD",
     "name": "Milky Way",
-    "showChildren": false,
     "items": [
       {
         "_id": "2asxasxadvwdevMCKcsdccdSMDASD",
         "name": "Sun",
-        "showChildren": false,
         "items": [
           {
             "_id": "3asxasxadvSDevMCKcsddSjkMDASD",
-            "name": "Earth",
-            "showChildren": false
+            "name": "Earth"
           },
           {
             "_id": "4asascasccaadvSDevMCKcsddSjkMDASD",
-            "name": "Mars",
-            "showChildren": false
+            "name": "Mars"
           }
         ]
       },
       {
         "_id": "5asxasxadvSDevMCKcsdccdSMDASD",
-        "name": "Alpha Centauri",
-        "showChildren": false
+        "name": "Alpha Centauri"
       }
     ]
   },
   {
     "_id": "6asxasxadvwdevMCKcsdccdSMDCKM",
     "name": "Andromeda",
-    "showChildren": false,
     "items": [
       {
         "_id": "7asxasvbadvSDevMCKcsdccdSMDASD",
-        "name": "HD 3883",
-        "showChildren": false
+        "name": "HD 3883"
       }
     ]
   }

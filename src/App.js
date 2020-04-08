@@ -1,14 +1,8 @@
-import React from 'react';
-import JsonToAccordion from './JsonToAccordion.component';
-
-import data from './data.json';
+import React from "react";
+import JsonToAccordionContainer from "./JsonToAccordion/JsonToAccordionContainer";
 
 const App = () => {
-  return (
-    <div>
-      <JsonToAccordion data={data} />
-    </div>
-  );
+  return <JsonToAccordionContainer />;
 };
 
 export default App;
