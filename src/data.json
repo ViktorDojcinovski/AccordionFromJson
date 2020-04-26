@@ -1,36 +1,54 @@
 [
   {
-    "_id": "1asxasxadvwdevMCKcsdccdSMDCSD",
+    "_id": "1",
     "name": "Milky Way",
     "items": [
       {
-        "_id": "2asxasxadvwdevMCKcsdccdSMDASD",
+        "_id": "1.1",
         "name": "Sun",
         "items": [
           {
-            "_id": "3asxasxadvSDevMCKcsddSjkMDASD",
+            "_id": "1.1.1",
             "name": "Earth"
           },
           {
-            "_id": "4asascasccaadvSDevMCKcsddSjkMDASD",
+            "_id": "1.1.2",
             "name": "Mars"
           }
         ]
       },
       {
-        "_id": "5asxasxadvSDevMCKcsdccdSMDASD",
+        "_id": "1.2",
         "name": "Alpha Centauri"
       }
     ]
   },
   {
-    "_id": "6asxasxadvwdevMCKcsdccdSMDCKM",
+    "_id": "2",
     "name": "Andromeda",
     "items": [
       {
-        "_id": "7asxasvbadvSDevMCKcsdccdSMDASD",
-        "name": "HD 3883"
+        "_id": "2.1",
+        "name": "HD 3883",
+        "items": [
+          {
+            "_id": "2.1.1",
+            "name": "Some planet"
+          },
+          {
+            "_id": "2.1.2",
+            "name": "Some other planet"
+          }
+        ]
+      },
+      {
+        "_id": "2.2",
+        "name": "HC 178"
       }
     ]
+  },
+  {
+    "_id": "3",
+    "name": "Triangulum"
   }
 ]

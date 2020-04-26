@@ -23,15 +23,14 @@ function ItemList({ data, onClickItem, toggledItems }) {
       if (items) {
         return (
           <ul style={{ backgroundColor: lighten(Co, "#aaa") }}>
-            {" "}
-            {list(items)}{" "}
+            {list(items)}
           </ul>
         );
       }
     };
 
     return data.map((node) => {
-      Co = Array.isArray(node.items) ? Co + 0.05 : Co;
+      Co = node.items ? Co + 0.05 : 0.05;
       return (
         <Item
           key={node._id}
