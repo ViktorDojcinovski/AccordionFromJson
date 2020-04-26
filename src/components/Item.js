@@ -1,28 +1,55 @@
 import React from "react";
 import { string, bool, func, oneOfType, array, element } from "prop-types";
+import styled from "styled-components";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
-function Item({ _id, name, showChildren, items, children, onClick }) {
+const StyledListItem = styled.li`
+  border: none;
+  margin: 0;
+  span {
+    span {
+      padding-right: 10px;
+    }
+  }
+`;
+
+function Item({
+  _id,
+  name,
+  showChildren,
+  items,
+  children,
+  hasChildrenItems,
+  onClick,
+}) {
   const onClickHandler = (e) => {
     e.preventDefault();
-    onClick(e.target);
+    onClick(e.currentTarget);
   };
 
   return (
-    <li>
-      {/* eslint-disable-next-line */}
+    <StyledListItem>
       <span
         style={{
           cursor: items ? "pointer" : "not-allowed",
-          color: "darkblue",
           fontWeight: items ? "bold" : "light",
         }}
         id={_id}
         onClick={items ? onClickHandler : null}
       >
-        {name}
+        <span>{name}</span>
+        <small>
+          {hasChildrenItems ? (
+            <FontAwesomeIcon
+              icon={faChevronDown}
+              style={{ pointerEvents: "auto" }}
+            />
+          ) : null}
+        </small>
       </span>
       {showChildren ? children : null}
-    </li>
+    </StyledListItem>
   );
 }
 
@@ -33,6 +60,7 @@ Item.propTypes = {
   items: array,
   onClick: func,
   children: oneOfType([array, element]),
+  hasChildrenItems: bool,
 };
 
 export default Item;

@@ -7,7 +7,7 @@ function JsonToAccordion(props) {
   return (
     <>
       <ItemList {...props} />
-      <Button onClick={props.onClickButton}>
+      <Button onClick={props.onClickButton} bgcolor="#5cb85c">
         {props.allItems.length === props.toggledItems.length &&
         props.toggledItems.length !== 0
           ? "Collapse All"
