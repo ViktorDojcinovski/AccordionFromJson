@@ -1,8 +1,8 @@
 import React from "react";
-import JsonToAccordionContainer from "./JsonToAccordion/JsonToAccordionContainer";
+import JsonToAccordion from "./JsonToAccordion/JsonToAccordion";
 
 const App = () => {
-  return <JsonToAccordionContainer />;
+  return <JsonToAccordion />;
 };
 
 export default App;

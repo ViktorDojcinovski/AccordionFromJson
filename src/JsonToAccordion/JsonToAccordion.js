@@ -1,20 +1,62 @@
-import React from "react";
+import React, { useState, useEffect, useCallback } from "react";
 
-import Button from "../components/Button";
-import ItemList from "../components/ItemList";
+import JsonToAccordion from "./JsonToAccordion";
+import "./JsonToAccordion.css";
+import data from "../data.json";
 
-function JsonToAccordion(props) {
-  return (
-    <>
-      <ItemList {...props} />
-      <Button onClick={props.onClickButton} bgcolor="#5cb85c">
-        {props.allItems.length === props.toggledItems.length &&
-        props.toggledItems.length !== 0
-          ? "Collapse All"
-          : "Expand All"}
-      </Button>
-    </>
+const JsonToAccordionContainer = () => {
+  const [allItems, setAllItems] = useState([]);
+  const [toggledItems, setToggledItems] = useState([]);
+
+  // Recursive function for
+  const recursion = useCallback(
+    (data) => {
+      data.forEach((item) => {
+        if (item.hasOwnProperty("items")) {
+          allItems.push(item._id);
+          recursion(item.items);
+        }
+      });
+
+      return allItems;
+    },
+    [allItems]
   );
-}
 
-export default JsonToAccordion;
+  useEffect(() => {
+    setAllItems(recursion(data));
+  }, [recursion]);
+
+  // Accordion item click callback
+  const onClickElement = (target) => {
+    if (toggledItems.includes(target.attributes.id.value)) {
+      const filteredItems = toggledItems.filter((item) => {
+        return item !== target.attributes.id.value;
+      });
+      setToggledItems(filteredItems);
+    } else {
+      setToggledItems(toggledItems.concat(target.attributes.id.value));
+    }
+  };
+
+  // Button click callback
+  const onClickButton = () => {
+    if (allItems.length > toggledItems.length) {
+      setToggledItems(allItems);
+    } else {
+      setToggledItems([]);
+    }
+  };
+
+  return (
+    <JsonToAccordion
+      data={data}
+      allItems={allItems}
+      toggledItems={toggledItems}
+      onClickButton={onClickButton}
+      onClickItem={onClickElement}
+    />
+  );
+};
+
+export default JsonToAccordionContainer;
